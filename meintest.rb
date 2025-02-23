@@ -1,27 +1,9 @@
 require_relative 'lib/my_enumerables'
 
-array = [1, 1, 2, 3, 5, 8, 13, 21, 34]
 
-my_each_results = []
-each_results = []
+enumerable = [1, 1, 2, 3, 5, 8, 13, 21, 34]
 
-puts "erster test"
-
-array.my_each do |item|
-
-end
+puts enumerable.inject(0) {|sum, value| sum + value}
 
 
-puts "zweiter test"
-
-array.my_each do |element|
-  my_each_results << element * 2
-end
-
-p my_each_results
-
-
-#input
-#array.my_each do |element|
-#  my_each_results << element * 2
-#end
+#expect(enumerable.my_select { |value| value > 10 }).to eq([13, 21, 34])
